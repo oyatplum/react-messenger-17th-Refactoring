@@ -24,7 +24,7 @@
 2023년 3월 31일 금요일
 
 ## 필수 구현 기능
-- [결과화면1](https://react-messanger-jieun.vercel.app/), [결과화면2](https://react-messenger-16th-kongnayeon.vercel.app/)과 같이 구현합니다.
+- [결과화면](https://react-messenger-16th-kongnayeon.vercel.app/)과 같이 구현합니다.
 - 채팅방 상단의 프로필을 클릭하면 사용자를 변경할 수 있습니다.
 - 메세지를 보내면 채팅방 하단으로 스크롤을 이동시킵니다.
 - 메세지에 유저 정보(프로필 사진, 이름)를 표시합니다.
