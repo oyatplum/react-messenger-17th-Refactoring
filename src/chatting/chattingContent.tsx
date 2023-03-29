@@ -2,13 +2,18 @@ import React from 'react';
 import styled from 'styled-components';
 import messageInfo from './../json/message.json';
 import Talk from './../Talk/talk';
-import { MessageInfo } from '../interface/interface';
 
 function chattingContent() {
   return (
     <Chatting>
       {messageInfo[0].message.map((chat, index) => (
-        <Talk />
+        <Talk
+          key={index}
+          messageId={index}
+          isUser={chat.isUser}
+          addText={chat.addText}
+          userNum={chat.userNum}
+        />
       ))}
     </Chatting>
   );
