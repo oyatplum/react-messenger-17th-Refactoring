@@ -1,0 +1,10 @@
+[
+  {
+    "chattingRoomId": 0,
+    "message": [
+      { "isUser": false, "userNum": 1, "addText": "애옹아" },
+      { "isUser": false, "userNum": 1, "addText": "애옹해봐" },
+      { "isUser": true, "userNum": 0, "addText": "애옹~" }
+    ]
+  }
+]
