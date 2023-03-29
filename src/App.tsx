@@ -1,9 +1,11 @@
+import { GlobalStyle } from './styles/GlobalStyle';
 import ChattingRoomPage from './pages/ChattingRoomPage';
 import styled from 'styled-components';
 
 function App() {
   return (
     <>
+      <GlobalStyle />
       <Container>
         <ChattingRoomPage />
       </Container>
