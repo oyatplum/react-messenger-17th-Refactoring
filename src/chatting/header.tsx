@@ -7,8 +7,16 @@ function header() {
   return (
     <Head>
       <Button>back</Button>
-      <ToggleUser />
-      <ToggleUser />
+      <ToggleUser
+        userId={userList[0].userId}
+        userName={userList[0].userName}
+        isUser={userList[0].isUser}
+      />
+      <ToggleUser
+        userId={userList[1].userId}
+        userName={userList[1].userName}
+        isUser={userList[1].isUser}
+      />
     </Head>
   );
 }
