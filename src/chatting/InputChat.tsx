@@ -7,7 +7,8 @@ import { userNumber } from '../atom/atom';
 import { messageList } from '../atom/atom';
 import { chatList } from '../atom/atom';
 import { selectedUser } from '../atom/atom';
-import { ChatInfo } from '../interface/interface';
+import { ListInfo } from '../interface/interface';
+import { Message } from '../interface/interface2';
 
 function InputChat() {
   const [text, setText] = useState<string>('');
@@ -23,13 +24,13 @@ function InputChat() {
   const submitText = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (text.trim()) {
-      let newChat: ChatInfo = {
+      let newChat: Message = {
         userNum: selectedId,
         addText: text,
       };
       setText('');
       setNewChatList([...newChatList, newChat]);
-      // setNewMessageList()
+      //setNewMessageList(newChatList);
     }
   };
 

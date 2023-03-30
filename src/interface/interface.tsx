@@ -12,7 +12,9 @@ export interface MessageInfo {
 
 export interface ListInfo {
   chattingRoomId: number;
-  message: message[]; // message 가져오자
+  addText: string;
+  userNum: number;
+  //message: message[]; // message 가져오자
 }
 
 export interface ChatInfo {
