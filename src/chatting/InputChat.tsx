@@ -24,13 +24,15 @@ function InputChat() {
   const submitText = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (text.trim()) {
-      let newChat: Message = {
+      let newChat: ListInfo = {
         userNum: selectedId,
         addText: text,
+        chattingRoomId: selectedId,
+        message: //엥...
       };
       setText('');
-      setNewChatList([...newChatList, newChat]);
-      //setNewMessageList(newChatList);
+      //setNewChatList([...newChatList, newChat]);
+      setNewMessageList([...newMessageList, newChat]);
     }
   };
 

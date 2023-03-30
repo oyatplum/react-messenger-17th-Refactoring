@@ -10,7 +10,7 @@ export const selectedUser = atom<number>({
 
 export const messageList = atom<ListInfo[]>({
   key: 'messageInfo',
-  default: messageInfo,
+  default: messageInfo, //엥...
 });
 
 export const userNumber = atom<number>({

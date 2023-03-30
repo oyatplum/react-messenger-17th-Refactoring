@@ -12,8 +12,8 @@ export interface MessageInfo {
 
 export interface ListInfo {
   chattingRoomId: number;
-  // addText: string;
-  // userNum: number;
+  addText: string;
+  userNum: number;
   message: Message[]; // message 가져오자
 }
 
