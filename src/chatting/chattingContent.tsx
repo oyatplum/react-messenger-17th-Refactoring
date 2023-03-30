@@ -10,7 +10,6 @@ function chattingContent() {
         <Talk
           key={index}
           messageId={index}
-          isUser={chat.isUser}
           addText={chat.addText}
           userNum={chat.userNum}
         />
