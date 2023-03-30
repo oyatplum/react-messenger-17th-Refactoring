@@ -5,12 +5,13 @@ export interface UserInfo {
 }
 
 export interface MessageInfo {
-  chattingRoomId: number;
-  message: Message[];
-}
-export interface ExtendedMessageInfo extends MessageInfo {
+  addText: string;
   messageId: number;
+  userNum: number;
 }
+// export interface ExtendedMessageInfo extends MessageInfo {
+//   messageId: number;
+// }
 // export interface ListInfo {
 //   chattingRoomId: number;
 //   addText: string;
