@@ -1,15 +1,16 @@
 import { GlobalStyle } from './styles/GlobalStyle';
 import ChattingRoomPage from './pages/ChattingRoomPage';
 import styled from 'styled-components';
+import { RecoilRoot } from 'recoil';
 
 function App() {
   return (
-    <>
+    <RecoilRoot>
       <GlobalStyle />
       <Container>
         <ChattingRoomPage />
       </Container>
-    </>
+    </RecoilRoot>
   );
 }
 const Container = styled.div`

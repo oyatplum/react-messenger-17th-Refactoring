@@ -17,21 +17,17 @@ function InputChat() {
   const [selectedId, setSelectedId] = useRecoilState(selectedUser); //비교하려는 selectedId >> userID랑 비교
 
   if (selectedId !== addUserNum) {
-    selectedId == 1;
-  } else {
-    return selectedId;
+    setSelectedId(1);
   }
 
   const submitText = (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (text.trim()) {
-      //짜야함
       let newChat: ChatInfo = {
         userNum: selectedId,
         addText: text,
       };
       setText('');
-      // setNewChatList(newChatList.concat(newChat));
       setNewChatList([...newChatList, newChat]);
       // setNewMessageList()
     }
