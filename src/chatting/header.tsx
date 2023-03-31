@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import ToggleUser from './../user/ToggleUser';
+import ToggleUser from './../component/user/ToggleUser';
 import userList from './../json/users.json';
 
 function header() {

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
-import messageInfo from './../json/message.json';
+import messageInfo from './../../json/message.json';
 import styled from 'styled-components';
-import { MessageInfo } from '../interface/interface';
-import { selectedUser } from '../atom/atom';
+import { MessageInfo } from '../../interface/interface';
+import { selectedUser } from '../../atom/atom';
 
 function Talk({ messageId }: MessageInfo) {
   const selected = useRecoilValue(selectedUser);

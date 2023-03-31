@@ -2,8 +2,8 @@ import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { UserInfo } from '../interface/interface';
-import { selectedUser } from '../atom/atom';
+import { UserInfo } from '../../interface/interface';
+import { selectedUser } from '../../atom/atom';
 
 function ToggleUser({ userId, userName }: UserInfo) {
   const [selectedId, setSelectedId] = useRecoilState(selectedUser);

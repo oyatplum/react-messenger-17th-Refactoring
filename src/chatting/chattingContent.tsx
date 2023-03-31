@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import messageInfo from './../json/message.json';
-import Talk from './../Talk/talk';
+import Talk from './../component/Talk/talk';
 
 function chattingContent() {
   return (
