@@ -1,4 +1,3 @@
-import { Message } from './interface2';
 export interface UserInfo {
   userId: number;
   userName: string;
@@ -23,3 +22,8 @@ export interface ChatInfo {
   addText: string;
   userNum: number;
 }
+// export interface Message {
+//   //엥
+//   addText: string;
+//   userNum: number;
+// }

@@ -1,12 +1,11 @@
-import React from 'react';
 import styled from 'styled-components';
-import messageInfo from './../json/message.json';
 import Talk from './../component/Talk/talk';
 import { ChatInfo } from './../interface/interface';
 import { useRecoilState } from 'recoil';
 import { chatList } from './../atom/atom';
 
 const ChattingContent = ({ addText, userNum }: ChatInfo) => {
+  //이게 아닌데...
   const [chattingList, setChattingList] = useRecoilState(chatList);
   return (
     <Chatting>

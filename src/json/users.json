@@ -1,4 +1,4 @@
 [
-  { "userId": 0, "userName": "애옹", "isUser": true },
-  { "userId": 1, "userName": "채형원", "isUser": false }
+  { "userId": 0, "userName": "애옹" },
+  { "userId": 1, "userName": "채형원" }
 ]

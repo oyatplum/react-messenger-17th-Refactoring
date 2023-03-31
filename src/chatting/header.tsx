@@ -1,9 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
 import ToggleUser from './../component/user/ToggleUser';
 import userList from './../json/users.json';
 
-const header = () => {
+const Header = () => {
   return (
     <Head>
       <Button>back</Button>
@@ -27,4 +26,4 @@ const Button = styled.button`
   margin-left: 10px;
 `;
 
-export default header;
+export default Header;

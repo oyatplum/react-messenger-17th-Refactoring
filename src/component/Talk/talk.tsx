@@ -1,4 +1,3 @@
-import React from 'react';
 import { useRecoilValue } from 'recoil';
 import messageInfo from './../../json/message.json';
 import styled from 'styled-components';

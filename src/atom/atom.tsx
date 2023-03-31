@@ -1,6 +1,5 @@
 import { atom } from 'recoil';
 import messageInfo from './../json/message.json';
-import { MessageInfo } from '../interface/interface';
 import { ChatInfo } from '../interface/interface';
 // import { ExtendedMessageInfo } from '../interface/interface';
 

@@ -1,19 +1,13 @@
-import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
-import messageInfo from './../json/message.json';
-import { useRecoilState, useRecoilValue, useSetRecoilState } from 'recoil';
-import { userNumber } from '../atom/atom';
-// import { messageList } from '../atom/atom';
-import { chatList } from '../atom/atom';
-import { selectedUser } from '../atom/atom';
-import { Message } from '../interface/interface2';
+import { useRecoilState } from 'recoil';
+import { userNumber, chatList, selectedUser } from '../atom/atom';
+import { ChatInfo } from '../interface/interface';
 
 const InputChat = () => {
   const [text, setText] = useState<string>('');
   const [addUserNum, setAddUserNum] = useRecoilState(userNumber); // 비교하려는 usernum
   const [newChatList, setNewChatList] = useRecoilState(chatList);
-  // const [newMessageList, setNewMessageList] = useRecoilState(messageList); //최종 set할 거
   const [selectedId, setSelectedId] = useRecoilState(selectedUser); //비교하려는 selectedId >> userID랑 비교
 
   if (selectedId !== addUserNum) {
@@ -24,13 +18,12 @@ const InputChat = () => {
     e.preventDefault();
     console.log('submit?');
     if (text.trim()) {
-      let newChat: Message = {
+      let newChat: ChatInfo = {
         userNum: selectedId,
         addText: text,
       };
       setText('');
       setNewChatList([...newChatList, newChat]);
-      //setNewMessageList([...newMessageList, newChat]);
     }
   };
 
@@ -40,21 +33,13 @@ const InputChat = () => {
   };
 
   return (
-    // <Enter>
     <InputText onSubmit={() => submitText}>
       <InputForm onChange={handleChange} value={text} />
       <EnterButton>전송</EnterButton>
     </InputText>
-    // </Enter>
   );
 };
-// const Enter = styled.form`
-//   backgorund-color: blue;
-//   height: 80px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// `;
+
 const InputForm = styled.input`
   border: none;
   background-color: rgb(205, 222, 241);

@@ -1,5 +1,3 @@
-import React from 'react';
-import { useState } from 'react';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import { UserInfo } from '../../interface/interface';
@@ -7,14 +5,6 @@ import { selectedUser } from '../../atom/atom';
 
 const ToggleUser = ({ userId, userName }: UserInfo) => {
   const [selectedId, setSelectedId] = useRecoilState(selectedUser);
-
-  // const changeUser = () => {
-  //   if (isUser) {
-  //     setName('애옹');
-  //   } else {
-  //     setName('채형원');
-  //   }
-  // };
 
   return (
     <>
