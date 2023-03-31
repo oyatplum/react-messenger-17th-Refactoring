@@ -70,7 +70,7 @@ const EnterButton = styled.button`
   margin-left: 15px;
   font-size: 15px;
 `;
-const InputText = styled.div`
+const InputText = styled.form`
   backgorund-color: blue;
   height: 80px;
   display: flex;
