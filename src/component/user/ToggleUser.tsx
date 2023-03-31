@@ -5,7 +5,7 @@ import { useRecoilState } from 'recoil';
 import { UserInfo } from '../../interface/interface';
 import { selectedUser } from '../../atom/atom';
 
-function ToggleUser({ userId, userName }: UserInfo) {
+const ToggleUser = ({ userId, userName }: UserInfo) => {
   const [selectedId, setSelectedId] = useRecoilState(selectedUser);
 
   // const changeUser = () => {
@@ -29,7 +29,7 @@ function ToggleUser({ userId, userName }: UserInfo) {
       )}
     </>
   );
-}
+};
 
 const NowUser = styled.div`
   font-size: 30px;

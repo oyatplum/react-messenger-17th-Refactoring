@@ -3,7 +3,7 @@ import ChattingRoomPage from './pages/ChattingRoomPage';
 import styled from 'styled-components';
 import { RecoilRoot } from 'recoil';
 
-function App() {
+const App = () => {
   return (
     <RecoilRoot>
       <GlobalStyle />
@@ -12,7 +12,7 @@ function App() {
       </Container>
     </RecoilRoot>
   );
-}
+};
 const Container = styled.div`
   background-color: white;
   display: flex;

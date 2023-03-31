@@ -9,7 +9,7 @@ import { chatList } from '../atom/atom';
 import { selectedUser } from '../atom/atom';
 import { Message } from '../interface/interface2';
 
-function InputChat() {
+const InputChat = () => {
   const [text, setText] = useState<string>('');
   const [addUserNum, setAddUserNum] = useRecoilState(userNumber); // 비교하려는 usernum
   const [newChatList, setNewChatList] = useRecoilState(chatList);
@@ -47,7 +47,7 @@ function InputChat() {
     </InputText>
     // </Enter>
   );
-}
+};
 // const Enter = styled.form`
 //   backgorund-color: blue;
 //   height: 80px;

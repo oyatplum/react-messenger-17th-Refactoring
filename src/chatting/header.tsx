@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ToggleUser from './../component/user/ToggleUser';
 import userList from './../json/users.json';
 
-function header() {
+const header = () => {
   return (
     <Head>
       <Button>back</Button>
@@ -11,7 +11,7 @@ function header() {
       <ToggleUser userId={userList[1].userId} userName={userList[1].userName} />
     </Head>
   );
-}
+};
 
 const Head = styled.div`
   display: flex;

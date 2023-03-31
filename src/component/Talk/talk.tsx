@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { MessageInfo } from '../../interface/interface';
 import { selectedUser } from '../../atom/atom';
 
-function Talk({ messageId }: MessageInfo) {
+const Talk = ({ messageId }: MessageInfo) => {
   const selected = useRecoilValue(selectedUser);
   return (
     <>
@@ -20,7 +20,7 @@ function Talk({ messageId }: MessageInfo) {
       )}
     </>
   );
-}
+};
 
 const Chat = styled.div`
   margin: 1rem 0.5rem 0.5rem 0.5rem;

@@ -3,7 +3,7 @@ import Header from '../chatting/header';
 import ChattingContent from '../chatting/chattingContent';
 import InputChat from '../chatting/InputChat';
 
-function ChattingRoomPage() {
+const ChattingRoomPage = () => {
   return (
     <>
       <Header />
@@ -11,6 +11,6 @@ function ChattingRoomPage() {
       <InputChat />
     </>
   );
-}
+};
 
 export default ChattingRoomPage;

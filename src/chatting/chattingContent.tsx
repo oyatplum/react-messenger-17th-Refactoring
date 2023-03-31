@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import messageInfo from './../json/message.json';
 import Talk from './../component/Talk/talk';
 
-function chattingContent() {
+const chattingContent = () => {
   return (
     <Chatting>
       {messageInfo[0].message.map((chat, index) => (
@@ -16,7 +16,7 @@ function chattingContent() {
       ))}
     </Chatting>
   );
-}
+};
 
 const Chatting = styled.div`
   background-color: rgb(205, 222, 241);
