@@ -6,18 +6,24 @@ const Header = () => {
   return (
     <Head>
       <Button>back</Button>
-      <ToggleUser userId={userList[0].userId} userName={userList[0].userName} />
       <ToggleUser
-        userId={userList[1].userId}
-        userName={userList[1].userName} //여기는 채팅방 사람에 따라 바껴야 함
+        userId={userList[0].userId}
+        userName={userList[0].userName}
+        //userNum? 넣을까
       />
+      {
+        <ToggleUser
+          userId={userList[1].userId}
+          userName={userList[1].userName} //여기는 채팅방 사람에 따라 바껴야 함
+        />
+      }
     </Head>
   );
 };
 
 const Head = styled.div`
   display: flex;
-  height: 60px;
+  height: 80px;
   align-items: center;
 `;
 const Button = styled.button`

@@ -74,7 +74,8 @@ const NowUser = styled.div`
   background-color: white;
   border-radius: 7px;
   font-size: 16px;
-  padding: 3px;
+  padding: 6px;
+  padding-top: 8px;
 `;
 
 const CounterPart = styled.div`
@@ -84,7 +85,8 @@ const CounterPart = styled.div`
   background-color: white;
   border-radius: 7px;
   font-size: 16px;
-  padding: 4px;
+  padding: 6px;
+  padding-top: 8px;
 `;
 
 export default Talk;
