@@ -7,7 +7,10 @@ const Header = () => {
     <Head>
       <Button>back</Button>
       <ToggleUser userId={userList[0].userId} userName={userList[0].userName} />
-      <ToggleUser userId={userList[1].userId} userName={userList[1].userName} />
+      <ToggleUser
+        userId={userList[1].userId}
+        userName={userList[1].userName} //여기는 채팅방 사람에 따라 바껴야 함
+      />
     </Head>
   );
 };

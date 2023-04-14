@@ -12,10 +12,9 @@ export interface MessageInfo {
 //   messageId: number;
 // }
 // export interface ListInfo {
-//   chattingRoomId: number;
+//   //chattingRoomId: number;
 //   addText: string;
 //   userNum: number;
-//   message: Message[]; // message 가져오자
 // }
 
 export interface ChatInfo {

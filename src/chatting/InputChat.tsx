@@ -6,34 +6,27 @@ import { ChatInfo } from '../interface/interface';
 
 const InputChat = () => {
   const [text, setText] = useState<string>('');
-  const [addUserNum, setAddUserNum] = useRecoilState(userNumber); // 비교하려는 usernum
   const [newChatList, setNewChatList] = useRecoilState(chatList);
   const [selectedId, setSelectedId] = useRecoilState(selectedUser); //비교하려는 selectedId >> userID랑 비교
 
-  if (selectedId !== addUserNum) {
-    setSelectedId(1);
-  }
-
   const submitText = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('submit?');
     if (text.trim()) {
       let newChat: ChatInfo = {
         userNum: selectedId,
         addText: text,
       };
+      setNewChatList([...newChatList, newChat]); //여기서 에러같은데.....
       setText('');
-      setNewChatList([...newChatList, newChat]);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('change');
     setText(e.target.value);
   };
 
   return (
-    <InputText onSubmit={() => submitText}>
+    <InputText onSubmit={submitText}>
       <InputForm onChange={handleChange} value={text} />
       <EnterButton>전송</EnterButton>
     </InputText>

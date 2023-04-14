@@ -1,20 +1,24 @@
 import { useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import messageInfo from './../../json/message.json';
 import styled from 'styled-components';
 import { MessageInfo } from '../../interface/interface';
-import { selectedUser } from '../../atom/atom';
+import { selectedUser, chatList } from '../../atom/atom';
 
 const Talk = ({ messageId }: MessageInfo) => {
   const selected = useRecoilValue(selectedUser);
+  const [chattingList, setChattingList] = useRecoilState(chatList);
   return (
     <>
-      {selected === messageInfo[0].message[messageId].userNum ? (
+      {selected === chattingList[messageId].userNum ? (
+        //messageinfo로 접근이 아니지!!chatList로 해야할 것 같은데
+        //와 이게 되네?
         <Chat>
-          <NowUser>{messageInfo[0].message[messageId].addText} </NowUser>
+          <NowUser>{chattingList[messageId].addText} </NowUser>
         </Chat>
       ) : (
         <Chat>
-          <CounterPart>{messageInfo[0].message[messageId].addText}</CounterPart>
+          <CounterPart>{chattingList[messageId].addText}</CounterPart>
         </Chat>
       )}
     </>
