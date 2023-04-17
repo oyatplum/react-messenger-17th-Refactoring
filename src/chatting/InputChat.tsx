@@ -15,6 +15,7 @@ const InputChat = () => {
       let newChat: ChatInfo = {
         userNum: selectedId,
         addText: text,
+        date: String(new Date()), //몽미
       };
       setNewChatList([...newChatList, newChat]); //여기서 에러같은데.....
       setText('');

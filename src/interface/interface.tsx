@@ -7,6 +7,7 @@ export interface MessageInfo {
   addText: string;
   messageId: number;
   userNum: number;
+  date: string;
 }
 // export interface ExtendedMessageInfo extends MessageInfo {
 //   messageId: number;
@@ -20,6 +21,7 @@ export interface MessageInfo {
 export interface ChatInfo {
   addText: string;
   userNum: number;
+  date: string;
 }
 // export interface Message {
 //   //엥

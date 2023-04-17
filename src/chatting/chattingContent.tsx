@@ -29,6 +29,7 @@ const ChattingContent = ({ addText, userNum }: ChatInfo) => {
           messageId={index}
           addText={chat.addText}
           userNum={chat.userNum}
+          date={chat.date}
         />
       ))}
     </Chatting>
