@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
   body {
-    background-color: rgb(186, 191, 225);
     height: 100vh;
     display: flex;
     justify-content: center;

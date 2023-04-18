@@ -36,7 +36,7 @@ const InputChat = () => {
 
 const InputForm = styled.input`
   border: none;
-  background-color: rgb(205, 222, 241);
+  background-color: hsla(360, 13%, 13%, 0.31);
   border-radius: 20px;
   height: 35px;
   font-size: 15px;

@@ -37,7 +37,7 @@ const ChattingContent = ({ addText, userNum }: ChatInfo) => {
 };
 
 const Chatting = styled.div`
-  background-color: rgb(205, 222, 241);
+  background-color: hsla(360, 13%, 13%, 0.31);
   height: 520px;
   overflow: auto;
 
@@ -50,7 +50,7 @@ const Chatting = styled.div`
   }
   &::-webkit-scrollbar-thumb {
     border-radius: 3px;
-    background-color: #bcbcbc;
+    background-color: hsla(360, 13%, 13%, 0.69);
   }
 `;
 export default ChattingContent;
