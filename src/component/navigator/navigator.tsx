@@ -27,6 +27,7 @@ const Page = styled.img`
   width: 1.3rem;
   display: flex;
   margin: 1.8rem;
+  cursor: pointer;
 `;
 
 export default Navigator;
