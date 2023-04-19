@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import { UserInfo } from '../../interface/interface';
 import { selectedUser } from '../../atom/atom';
-import userList from '../../json/users.json';
 
 const ToggleUser = ({ userId, userName }: UserInfo) => {
   const [selectedId, setSelectedId] = useRecoilState(selectedUser);

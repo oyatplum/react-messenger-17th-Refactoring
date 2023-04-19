@@ -5,7 +5,7 @@ import { UserInfo } from './../../interface/interface';
 const TargetUser = ({ userName, userId }: UserInfo) => {
   return (
     <H>
-      <Image src={`/images/${userId}.jpg`} />
+      <Image src={`/images/${userId}.jpg`}>x</Image>
       <Name>{userName}</Name>
     </H>
   );
