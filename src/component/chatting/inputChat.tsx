@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { userNumber, chatList, selectedUser } from '../atom/atom';
-import { ChatInfo } from '../interface/interface';
+import { userNumber, chatList, selectedUser } from '../../atom/atom';
+import { ChatInfo } from '../../interface/interface';
 
 const InputChat = () => {
   const [text, setText] = useState<string>('');

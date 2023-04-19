@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import Talk from './../component/Talk/talk';
-import { ChatInfo, UserInfo } from './../interface/interface';
+import Talk from './talk';
+import { ChatInfo } from './../../interface/interface';
 import { useRecoilState } from 'recoil';
-import { chatList } from './../atom/atom';
+import { chatList } from './../../atom/atom';
 import { useRef, useEffect } from 'react';
 
 const ChattingContent = ({ addText, userNum }: ChatInfo) => {

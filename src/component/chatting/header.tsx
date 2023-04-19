@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import ToggleUser from './../component/user/ToggleUser';
-import userList from './../json/users.json';
+import ToggleUser from './toggleUser';
+import userList from './../../json/users.json';
 
 const Header = () => {
   return (

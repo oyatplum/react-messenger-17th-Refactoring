@@ -43,7 +43,6 @@ const User = styled.div`
 const UserImage = styled.img`
   height: 2.5rem;
   width: 2.5rem;
-
   border-radius: 0.8rem;
 `;
 const PartnerImage = styled.img`
