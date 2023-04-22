@@ -6,8 +6,6 @@ export interface UserInfo {
 export interface MessageInfo {
   addText: string;
   messageId: number;
-  userNum: number;
-  date: string;
 }
 
 export interface ChatInfo {
@@ -15,3 +13,17 @@ export interface ChatInfo {
   userNum: number;
   date: string;
 }
+
+export interface ChattingRoom {
+  chattingRoomId: number;
+  messageId: number;
+}
+
+export interface ha {
+  chattingRoomId: number;
+  message: ChatInfo[];
+}
+
+// export interface ChattingRoomInfo {
+//  chattingRoomId: number;
+// }

@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import ToggleUser from './toggleUser';
 import userList from './../../json/users.json';
+import { ChatInfo, ChattingRoom } from './../../interface/interface';
+import { useNavigate } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({ chattingRoomId }: ChattingRoom) => {
+  const navigate = useNavigate();
   return (
     <Head>
-      <Button>back</Button>
       <ToggleUser
         userId={userList[0].userId}
         userName={userList[0].userName}
@@ -13,10 +15,11 @@ const Header = () => {
       />
       {
         <ToggleUser
-          userId={userList[1].userId}
-          userName={userList[1].userName} //여기는 채팅방 사람에 따라 바껴야 함
+          userId={userList[chattingRoomId].userId}
+          userName={userList[chattingRoomId].userName} //여기는 채팅방 사람에 따라 바껴야 함
         />
       }
+      <Button onClick={() => navigate('/chattingRoom')}>X</Button>
     </Head>
   );
 };
@@ -25,14 +28,19 @@ const Head = styled.div`
   display: flex;
   height: 80px;
   align-items: center;
+  background-color: rgb(191 214 232);
+  padding-bottom: 3px;
 `;
 const Button = styled.button`
   border: none;
-  background: rgb(205, 222, 241);
-  border-radius: 20px;
-  font-size: 15px;
-  height: 1.5rem;
-  margin-left: 10px;
+  background: none;
+  font-size: 0.9rem;
+  margin: 0 0 2.5rem 3.8rem;
+  color: #9a9a9a;
+  :hover {
+    color: rgb(69 68 68);
+    font-size: 1rem;
+  }
 `;
 
 export default Header;

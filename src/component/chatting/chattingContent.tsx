@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Talk from './talk';
-import { ChatInfo } from './../../interface/interface';
+import { ChatInfo, ChattingRoom } from './../../interface/interface';
 import { useRecoilState } from 'recoil';
 import { chatList } from './../../atom/atom';
 import { useRef, useEffect } from 'react';
 
-const ChattingContent = ({ addText, userNum }: ChatInfo) => {
+const ChattingContent = ({ chattingRoomId }: ChattingRoom) => {
   //이게 아닌데...
-  const [chattingList, setChattingList] = useRecoilState(chatList);
+  const [chattingList, setChattingList] = useRecoilState(chatList); //얘가 문제다 문제
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
@@ -19,25 +19,19 @@ const ChattingContent = ({ addText, userNum }: ChatInfo) => {
 
   useEffect(() => {
     scrollBottom();
-  }, [chattingList]);
+  }, [chattingList[chattingRoomId]]);
 
   return (
     <Chatting ref={scrollRef}>
-      {chattingList.map((chat, index) => (
-        <Talk
-          key={index}
-          messageId={index}
-          addText={chat.addText}
-          userNum={chat.userNum}
-          date={chat.date}
-        />
+      {chattingList[chattingRoomId].message.map((chat, index) => (
+        <Talk key={index} messageId={index} chattingRoomId={chattingRoomId} />
       ))}
     </Chatting>
   );
 };
 
 const Chatting = styled.div`
-  background-color: hsla(360, 13%, 13%, 0.31);
+  background-color: rgb(191 214 232);
   height: 520px;
   overflow: auto;
 

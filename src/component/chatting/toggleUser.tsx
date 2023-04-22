@@ -37,7 +37,8 @@ const ToggleUser = ({ userId, userName }: UserInfo) => {
 };
 const User = styled.div`
   display: block;
-  margin-left: 17%;
+  margin-left: 25%;
+  margin-top: 1.85rem;
 `;
 const UserImage = styled.img`
   height: 2.5rem;

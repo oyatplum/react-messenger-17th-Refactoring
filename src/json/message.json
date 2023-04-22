@@ -1,5 +1,15 @@
 [
   {
+    "chattingRoomId": 0,
+    "message": [
+      {
+        "userNum": 0,
+        "addText": "",
+        "date": "이렇게 하면 안 될 것 같은데ㅋㅋ..."
+      }
+    ]
+  },
+  {
     "chattingRoomId": 1,
     "message": [
       {

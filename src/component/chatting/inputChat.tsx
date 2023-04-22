@@ -1,13 +1,24 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
 import { userNumber, chatList, selectedUser } from '../../atom/atom';
-import { ChatInfo } from '../../interface/interface';
+import { ChatInfo, ChattingRoom, ha } from '../../interface/interface';
 
-const InputChat = () => {
+const InputChat = ({ chattingRoomId }: ChattingRoom) => {
   const [text, setText] = useState<string>('');
   const [newChatList, setNewChatList] = useRecoilState(chatList);
+  const [realChat, setRealChat] = useState(newChatList[chattingRoomId].message);
   const [selectedId, setSelectedId] = useRecoilState(selectedUser); //비교하려는 selectedId >> userID랑 비교
+
+  let newChatInfo = [
+    { chattingRoomId: 0, message: [] },
+    { chattingRoomId: 1, message: [] },
+    { chattingRoomId: 2, message: [] },
+    { chattingRoomId: 3, message: [] },
+    { chattingRoomId: 4, message: [] },
+    { chattingRoomId: 5, message: [] },
+    { chattingRoomId: 6, message: [] },
+  ] as ha[];
 
   const submitText = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,44 +28,65 @@ const InputChat = () => {
         addText: text,
         date: String(new Date()), //몽미
       };
-      setNewChatList([...newChatList, newChat]); //여기서 에러같은데.....
+      console.log(realChat);
+      setRealChat(realChat.concat(newChat)); //여기서 에러같음
+      console.log(realChat); //왜냠 여기서 안 바뀜
+      newChatInfo[chattingRoomId].message = realChat;
+      setNewChatList(newChatInfo);
       setText('');
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
 
   return (
     <InputText onSubmit={submitText}>
-      <InputForm onChange={handleChange} value={text} />
+      <textarea onChange={handleChange} value={text} />
       <EnterButton>전송</EnterButton>
     </InputText>
   );
 };
 
-const InputForm = styled.input`
-  border: none;
-  background-color: hsla(360, 13%, 13%, 0.31);
-  border-radius: 20px;
-  height: 35px;
-  font-size: 15px;
-  width: 70%;
-`;
 const EnterButton = styled.button`
   border: none;
-  background: rgb(205, 222, 241);
-  border-radius: 20px;
+  background-color: rgb(252 243 52);
   margin-left: 15px;
   font-size: 15px;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+  &:focus {
+    outline: none;
+  }
 `;
 const InputText = styled.form`
-  backgorund-color: blue;
-  height: 80px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  textarea {
+    border: none;
+    height: 95px;
+    font-size: 15px;
+    width: 75%;
+
+    &:focus {
+      outline: none;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 3px;
+      background-color: hsla(360, 13%, 13%, 0.69);
+    }
+  }
 `;
 
 export default InputChat;
