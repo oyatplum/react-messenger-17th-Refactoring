@@ -6,16 +6,24 @@ const Navigator = () => {
   const navigate = useNavigate();
 
   return (
-    <Container>
-      <Page src={`/images/friends.png`} onClick={() => navigate('/friends')} />
+    <>
+      <Container>
+        <Page
+          src={`/images/friends.png`}
+          onClick={() => navigate('/friends')}
+        />
 
-      <Page
-        src={`/images/chattingRoom.png`}
-        onClick={() => navigate('/chattingRoom')}
-      />
+        <Page
+          src={`/images/chattingRoom.png`}
+          onClick={() => navigate('/chattingRoom')}
+        />
 
-      <Page src={`/images/setting.png`} onClick={() => navigate('/setting')} />
-    </Container>
+        <Page
+          src={`/images/setting.png`}
+          onClick={() => navigate('/setting')}
+        />
+      </Container>
+    </>
   );
 };
 

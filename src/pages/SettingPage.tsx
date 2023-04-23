@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 const SettingPage = () => {
+  const navigate = useNavigate();
   return (
     <Container>
       <Setting>더보기</Setting>
@@ -31,6 +33,13 @@ const SettingPage = () => {
         <Git src={`/images/insta.png`} />
         <Info>{'Instagram_link'}</Info>
       </User>
+
+      <Line />
+      <div className="user">{'로그아웃'}</div>
+      <User onClick={() => navigate('/main')}>
+        <Git src={`/images/logout.png`} />
+        <Info>{'Logout'}</Info>
+      </User>
     </Container>
   );
 };
@@ -39,7 +48,7 @@ const Setting = styled.div`
   margin: 2rem 0 1rem 1rem;
 `;
 const Container = styled.div`
-  width: 270px;
+  width: 260px;
   .user {
     margin: 1rem 0 0.2rem 1.3rem;
     font-size: 0.78rem;
@@ -48,6 +57,7 @@ const Container = styled.div`
 const User = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 0.5rem;
   :hover {
     background-color: #e6e6e6;
     cursor: pointer;
@@ -62,7 +72,7 @@ const MyImage = styled.img`
 const MyName = styled.div`
   font-size: 1rem;
   display: block;
-  margin: 2rem 0 0 0.5rem;
+  margin: 1.5rem 0 0 0.5rem;
   height: 3rem;
   font-size: 1rem;
 `;
