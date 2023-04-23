@@ -8,17 +8,9 @@ const InputChat = ({ chattingRoomId }: ChattingRoom) => {
   const [text, setText] = useState<string>('');
   const [newChatList, setNewChatList] = useRecoilState(chatList);
   const [realChat, setRealChat] = useState(newChatList[chattingRoomId].message);
-  const [selectedId, setSelectedId] = useRecoilState(selectedUser); //비교하려는 selectedId >> userID랑 비교
+  const [selectedId, setSelectedId] = useRecoilState(selectedUser);
 
-  let newChatInfo = [
-    { chattingRoomId: 0, message: [] },
-    { chattingRoomId: 1, message: [] },
-    { chattingRoomId: 2, message: [] },
-    { chattingRoomId: 3, message: [] },
-    { chattingRoomId: 4, message: [] },
-    { chattingRoomId: 5, message: [] },
-    { chattingRoomId: 6, message: [] },
-  ] as ha[];
+  let hahaha;
 
   const submitText = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,11 +20,20 @@ const InputChat = ({ chattingRoomId }: ChattingRoom) => {
         addText: text,
         date: String(new Date()), //몽미
       };
-      console.log(realChat);
-      setRealChat(realChat.concat(newChat)); //여기서 에러같음
-      console.log(realChat); //왜냠 여기서 안 바뀜
-      newChatInfo[chattingRoomId].message = realChat;
-      setNewChatList(newChatInfo);
+
+      hahaha = realChat.concat(newChat);
+      setRealChat(hahaha); //여기서 에러같음
+
+      const oh = {
+        ...newChatList[chattingRoomId],
+        message: hahaha,
+      };
+      setNewChatList([
+        ...newChatList.slice(0, chattingRoomId),
+        oh,
+        ...newChatList.slice(chattingRoomId + 1),
+      ]);
+
       setText('');
     }
   };
