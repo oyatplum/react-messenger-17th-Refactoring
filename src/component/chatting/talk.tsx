@@ -82,7 +82,7 @@ const Talk = ({ chattingRoomId, messageId }: ChattingRoom) =>
 
 const Time = styled.div`
   font-size: 0.5rem;
-  margin-top: 1.2rem;
+  margin-top: auto;
   padding: 0.2rem;
   margin-left: auto;
 `;
@@ -114,9 +114,9 @@ const NowUser = styled.div`
   margin-right: 0.2rem;
   background-color: rgb(252, 243, 52);
   border-radius: 7px;
-  font-size: 15px;
+  font-size: 14px;
   padding: 6px;
-  padding-top: 11px;
+  padding-top: 9px;
 `;
 
 const CounterPart = styled.div`
@@ -125,9 +125,9 @@ const CounterPart = styled.div`
   width: auto;
   background-color: white;
   border-radius: 7px;
-  font-size: 15px;
+  font-size: 14px;
   padding: 6px;
-  padding-top: 11px;
+  padding-top: 9px;
 `;
 
 export default Talk;

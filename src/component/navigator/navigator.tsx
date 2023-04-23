@@ -8,10 +8,12 @@ const Navigator = () => {
   return (
     <Container>
       <Page src={`/images/friends.png`} onClick={() => navigate('/friends')} />
+
       <Page
         src={`/images/chattingRoom.png`}
         onClick={() => navigate('/chattingRoom')}
       />
+
       <Page src={`/images/setting.png`} onClick={() => navigate('/setting')} />
     </Container>
   );
@@ -28,6 +30,9 @@ const Page = styled.img`
   display: flex;
   margin: 1.8rem;
   cursor: pointer;
+  :hover {
+    filter: opacity(25%);
+  }
 `;
 
 export default Navigator;

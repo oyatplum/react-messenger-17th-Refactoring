@@ -60,6 +60,9 @@ const EnterButton = styled.button`
   &:focus {
     outline: none;
   }
+  :hover {
+    background-color: rgb(255 231 68);
+  }
 `;
 const InputText = styled.form`
   height: 130px;
