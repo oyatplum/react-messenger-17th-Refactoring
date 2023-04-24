@@ -1,53 +1,51 @@
-import React, { useEffect, useState } from 'react';
-import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import userList from '../json/users.json';
+import { useState } from 'react';
+import NotSearch from '../component/friends/notSearch';
+import Search from '../component/friends/search';
 
 const FriendsListPage = () => {
+  const [isSearch, setSearch] = useState(false);
+
   return (
     <Container>
-      <Friends>친구</Friends>
-      {userList.map((user, index) => (
-        <>
-          {index == 0 ? (
-            <>
-              <User //클릭하면 채팅창으로 이동하게
-              >
-                <MyImage src={`/images/${user.userId}.jpg`} />
-                <div className="text">
-                  <MyName>{user.userName}</MyName>
-                  <Message>{user.userMessage}</Message>
-                </div>
-              </User>
-              <Line>
-                <div>{'친구(6)'}</div>
-              </Line>
-            </>
-          ) : (
-            <User>
-              <PartImage src={`/images/${index}.jpg`} />
-              <div className="text">
-                <PartName>{user.userName}</PartName>
-                <Message>{user.userMessage}</Message>
-              </div>
-            </User>
-          )}
-        </>
-      ))}
+      <div className="header">
+        <Friends>친구</Friends>
+        <SearchImage
+          src={`/images/search.png`}
+          onClick={() => setSearch(!isSearch)}
+        />
+      </div>
+
+      <SearchBox>{isSearch ? <Search /> : <NotSearch />}</SearchBox>
     </Container>
   );
 };
 
+const Container = styled.div`
+  .header {
+    display: flex;
+  }
+`;
 const Friends = styled.div`
   font-size: 1.5rem;
   margin: 2rem 0 1rem 1rem;
 `;
-const Container = styled.div`
-  width: 270px;
+const SearchImage = styled.img`
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 1.9rem 0 1rem 11rem;
+
+  :hover {
+    filter: opacity(40%);
+    cursor: pointer;
+  }
 `;
+const SearchBox = styled.div``;
 const User = styled.div`
   display: flex;
   align-items: center;
+
   :hover {
     background-color: #e6e6e6;
     cursor: pointer;

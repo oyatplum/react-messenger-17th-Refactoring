@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
@@ -35,20 +34,23 @@ const SettingPage = () => {
       </User>
 
       <Line />
+
       <div className="user">{'로그아웃'}</div>
-      <User onClick={() => navigate('/main')}>
+      <User onClick={() => navigate('/')}>
         <Git src={`/images/logout.png`} />
         <Info>{'Logout'}</Info>
       </User>
     </Container>
   );
 };
+
 const Setting = styled.div`
   font-size: 1.5rem;
   margin: 2rem 0 1rem 1rem;
 `;
 const Container = styled.div`
   width: 260px;
+
   .user {
     margin: 1rem 0 0.2rem 1.3rem;
     font-size: 0.78rem;

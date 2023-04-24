@@ -26,7 +26,7 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route path="/main" index element={<MainPage />} />
+              <Route index element={<MainPage />} />
               <Route path="/friends" element={<FriendsListPage />} />
               <Route path="/chattingRoom" element={<ChattingRoomPage />} />
               <Route path="/setting" element={<SettingPage />} />
@@ -44,7 +44,6 @@ const Container = styled.div`
   flex-direction: column;
   height: 650px;
   width: 350px;
-  // border-radius: 8px;
   box-shadow: 1px 1px 15px rgba(73, 71, 71, 0.5);
 `;
 const Display = styled.div`

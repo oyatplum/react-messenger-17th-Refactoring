@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
-import { useRecoilState } from 'recoil';
-import { userNumber, chatList, selectedUser } from '../../atom/atom';
-import { ChatInfo, ChattingRoom, ha } from '../../interface/interface';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { chatList, selectedUser } from '../../atom/atom';
+import { ChatInfo, ChattingRoom } from '../../interface/interface';
 
 const InputChat = ({ chattingRoomId }: ChattingRoom) => {
   const [text, setText] = useState<string>('');
   const [newChatList, setNewChatList] = useRecoilState(chatList);
   const [realChat, setRealChat] = useState(newChatList[chattingRoomId].message);
-  const [selectedId, setSelectedId] = useRecoilState(selectedUser);
+  const selectedId = useRecoilValue(selectedUser);
 
-  let hahaha;
+  let updateChat;
 
   const submitText = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -18,19 +18,20 @@ const InputChat = ({ chattingRoomId }: ChattingRoom) => {
       let newChat: ChatInfo = {
         userNum: selectedId,
         addText: text,
-        date: String(new Date()), //몽미
+        date: String(new Date()),
       };
 
-      hahaha = realChat.concat(newChat);
-      setRealChat(hahaha); //여기서 에러같음
+      updateChat = realChat.concat(newChat);
+      setRealChat(updateChat);
 
-      const oh = {
+      const finalChatList = {
         ...newChatList[chattingRoomId],
-        message: hahaha,
+        message: updateChat,
       };
+
       setNewChatList([
         ...newChatList.slice(0, chattingRoomId),
-        oh,
+        finalChatList,
         ...newChatList.slice(chattingRoomId + 1),
       ]);
 
@@ -57,6 +58,7 @@ const EnterButton = styled.button`
   font-size: 15px;
   padding: 0.5rem 0.7rem;
   border-radius: 0.5rem;
+
   &:focus {
     outline: none;
   }

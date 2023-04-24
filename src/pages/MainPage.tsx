@@ -1,18 +1,18 @@
-import React from 'react';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
   const navigate = useNavigate();
+
   return (
-    <H>
+    <Container>
       <Button onClick={() => navigate('/friends')}>click to start</Button>
       <Image src={`/images/monstax.png`} />
-    </H>
+    </Container>
   );
 };
 
-const H = styled.div`
+const Container = styled.div`
   height: 650px;
   background-color: #e6e6e6;
 `;

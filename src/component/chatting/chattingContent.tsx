@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 import Talk from './talk';
-import { ChatInfo, ChattingRoom } from './../../interface/interface';
-import { useRecoilState } from 'recoil';
+import { ChattingRoom } from './../../interface/interface';
+import { useRecoilValue } from 'recoil';
 import { chatList } from './../../atom/atom';
 import { useRef, useEffect } from 'react';
 
 const ChattingContent = ({ chattingRoomId }: ChattingRoom) => {
-  //이게 아닌데...
-  const [chattingList, setChattingList] = useRecoilState(chatList); //얘가 문제다 문제
+  const chattingList = useRecoilValue(chatList);
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
 

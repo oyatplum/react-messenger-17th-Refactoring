@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -12,12 +11,10 @@ const Navigator = () => {
           src={`/images/friends.png`}
           onClick={() => navigate('/friends')}
         />
-
         <Page
           src={`/images/chattingRoom.png`}
           onClick={() => navigate('/chattingRoom')}
         />
-
         <Page
           src={`/images/setting.png`}
           onClick={() => navigate('/setting')}

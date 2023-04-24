@@ -26,19 +26,10 @@ const ToggleUser = ({ userId, userName }: UserInfo) => {
       )}
     </>
   );
-
-  // return (
-  //   <>
-  //     <NowUser onClick={() => setSelectedId(userId)}>
-  //       {userList[selectedId].userName}
-  //     </NowUser>
-  //   </>
-  // );
 };
 const User = styled.div`
   display: block;
-  margin-left: 25%;
-  margin-top: 1.85rem;
+  margin: 1.85rem 0 0 25%;
 `;
 const UserImage = styled.img`
   height: 2.5rem;
@@ -48,7 +39,6 @@ const UserImage = styled.img`
 const PartnerImage = styled.img`
   height: 2.5rem;
   width: 2.5rem;
-
   border-radius: 0.8rem;
   opacity: 0.5;
 `;

@@ -1,6 +1,7 @@
 export interface UserInfo {
   userId: number;
   userName: string;
+  userMessage: string;
 }
 
 export interface MessageInfo {
@@ -19,11 +20,7 @@ export interface ChattingRoom {
   messageId: number;
 }
 
-export interface ha {
+export interface Chat {
   chattingRoomId: number;
   message: ChatInfo[];
 }
-
-// export interface ChattingRoomInfo {
-//  chattingRoomId: number;
-// }
