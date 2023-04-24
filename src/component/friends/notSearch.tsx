@@ -66,8 +66,11 @@ const Modalmage = styled.img`
   height: 80px;
   width: 80px;
 `;
-const RemoveModal = styled.div``;
+const RemoveModal = styled.div`
+  cursor: pointer;
+`;
 const Container = styled.div`
+  position: relative;
   width: 100%;
   height: 100%;
   div {

@@ -27,6 +27,7 @@ const Container = styled.div`
   height: 100%;
   .header {
     display: flex;
+    height: 10%;
   }
 `;
 const Friends = styled.div`
@@ -45,7 +46,7 @@ const SearchImage = styled.img`
 `;
 const SearchBox = styled.div`
   width: 100%;
-  height: 100%;
+  height: 90%;
 `;
 const User = styled.div`
   display: flex;

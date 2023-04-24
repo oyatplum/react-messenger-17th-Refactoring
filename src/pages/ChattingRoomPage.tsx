@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 import userList from '../json/users.json';
 import { useNavigate } from 'react-router-dom';
+import { selectedUser } from '../atom/atom';
+import { useRecoilState, useRecoilValue } from 'recoil';
 
 const ChattingRoomPage = () => {
   const navigate = useNavigate();
+
+  const [selected, setSelected] = useRecoilState(selectedUser);
+  setSelected(0);
 
   return (
     <Container>
