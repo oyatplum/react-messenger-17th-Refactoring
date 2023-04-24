@@ -23,6 +23,8 @@ const FriendsListPage = () => {
 };
 
 const Container = styled.div`
+  width: 100%;
+  height: 100%;
   .header {
     display: flex;
   }
@@ -41,7 +43,10 @@ const SearchImage = styled.img`
     cursor: pointer;
   }
 `;
-const SearchBox = styled.div``;
+const SearchBox = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 const User = styled.div`
   display: flex;
   align-items: center;

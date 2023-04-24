@@ -1,12 +1,30 @@
 import styled from 'styled-components';
 import userList from '../../json/users.json';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+// import Modal from './modal';
 
 const NotSearch = () => {
   const navigate = useNavigate();
 
+  const [isModal, setIsModal] = useState(false);
+  const [modalId, setModalId] = useState(0);
+
+  const handleModal = (userId: number) => {
+    setIsModal(true);
+    setModalId(userId);
+  };
+
   return (
     <Container>
+      {isModal ? (
+        <Modal>
+          <Modalmage src={`/images/${modalId}.jpg`} />
+          <RemoveModal onClick={() => setIsModal(false)}>{'x'}</RemoveModal>
+        </Modal>
+      ) : (
+        <></>
+      )}
       {userList.map((user, index) => (
         <>
           {index == 0 ? (
@@ -23,7 +41,8 @@ const NotSearch = () => {
               </Line>
             </>
           ) : (
-            <User onClick={() => navigate('/chatting', { state: user.userId })}>
+            // <User onClick={() => navigate('/chatting', { state: user.userId })}>
+            <User onClick={() => handleModal(user.userId)}>
               <PartImage src={`/images/${index}.jpg`} />
               <div className="text">
                 <PartName>{user.userName}</PartName>
@@ -36,10 +55,21 @@ const NotSearch = () => {
     </Container>
   );
 };
-
+const Modal = styled.div`
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+`;
+const Modalmage = styled.img`
+  height: 80px;
+  width: 80px;
+`;
+const RemoveModal = styled.div``;
 const Container = styled.div`
-  width: 270px;
-
+  width: 100%;
+  height: 100%;
   div {
     display: flex;
   }
