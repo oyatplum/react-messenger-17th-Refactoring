@@ -24,3 +24,7 @@ export interface Chat {
   chattingRoomId: number;
   message: ChatInfo[];
 }
+
+export interface Last {
+  getLastMessage: string;
+}
