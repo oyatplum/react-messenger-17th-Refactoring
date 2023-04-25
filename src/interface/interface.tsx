@@ -24,7 +24,3 @@ export interface Chat {
   chattingRoomId: number;
   message: ChatInfo[];
 }
-
-export interface ModalInfo {
-  modalId: number;
-}

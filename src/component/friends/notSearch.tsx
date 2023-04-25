@@ -1,12 +1,8 @@
 import styled from 'styled-components';
 import userList from '../../json/users.json';
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-// import Modal from './modal';
 
 const NotSearch = () => {
-  const navigate = useNavigate();
-
   const [isModal, setIsModal] = useState(false);
   const [modalId, setModalId] = useState(0);
 
@@ -18,8 +14,20 @@ const NotSearch = () => {
   return (
     <Container>
       {isModal ? (
-        <Modal>
-          <Modalmage src={`/images/${modalId}.jpg`} />
+        <Modal modalId={modalId}>
+          <div
+            className="modal-user"
+            style={{
+              backgroundImage: `url(${
+                process.env.PUBLIC_URL + `/images/${modalId + 10}.jpg`
+              })`,
+              backgroundSize: 'cover',
+            }}
+          >
+            <Modalmage src={`/images/${modalId}.jpg`} />
+            <ModalName>{userList[modalId].userName}</ModalName>
+            <ModalMessage>{userList[modalId].userMessage}</ModalMessage>
+          </div>
           <RemoveModal onClick={() => setIsModal(false)}>{'x'}</RemoveModal>
         </Modal>
       ) : (
@@ -29,7 +37,7 @@ const NotSearch = () => {
         <>
           {index == 0 ? (
             <>
-              <User>
+              <User onClick={() => handleModal(user.userId)}>
                 <MyImage src={`/images/${user.userId}.jpg`} />
                 <div className="text">
                   <MyName>{user.userName}</MyName>
@@ -55,27 +63,52 @@ const NotSearch = () => {
     </Container>
   );
 };
-const Modal = styled.div`
+const Modal = styled.div<{ modalId: number }>`
   background: rgba(0, 0, 0, 0.3);
   z-index: 9999;
   width: 100%;
   height: 100%;
   position: absolute;
+
+  .modal-user {
+    display: block;
+    width: 14rem;
+    height: 20rem;
+    margin: 8rem 0 0 1.4rem;
+    text-align: center;
+  }
 `;
 const Modalmage = styled.img`
-  height: 80px;
-  width: 80px;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 1rem;
+  margin: 12.3rem 0 0 0;
 `;
-const RemoveModal = styled.div`
-  cursor: pointer;
+const ModalName = styled.div`
+  font-size: 1rem;
+  color: white;
+`;
+const ModalMessage = styled.div`
+  font-size: 0.8rem;
+  color: white;
+`;
+const RemoveModal = styled.button`
+  height: 1rem;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  color: rgb(69 68 68);
+  margin: 6rem 0 0 15rem;
+
+  :hover {
+    color: rgb(229 229 229);
+    cursor: pointer;
+  }
 `;
 const Container = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  div {
-    display: flex;
-  }
 `;
 const User = styled.div`
   display: flex;
