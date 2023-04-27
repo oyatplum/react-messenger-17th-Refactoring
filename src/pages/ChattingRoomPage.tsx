@@ -3,18 +3,17 @@ import userList from '../json/users.json';
 import { useNavigate } from 'react-router-dom';
 import { selectedUser } from '../atom/atom';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import MessageList from '../json/message.json';
 import { chatList } from './../atom/atom';
-import LastChat from '../component/chatting/lastChat';
+import LastInfo from '../component/chatting/lastInfo';
 
 const ChattingRoomPage = () => {
   const navigate = useNavigate();
   const chattingList = useRecoilValue(chatList);
 
-  const getLastMessage = (userId: number) => {
+  const getLastInfo = (userId: number) => {
     const lastChatList = chattingList[userId].message;
-    const lastMessage = lastChatList[lastChatList.length - 1];
-    return lastMessage.addText;
+    const lastChat = lastChatList[lastChatList.length - 1];
+    return [lastChat.addText, lastChat.date];
   };
 
   const [selected, setSelected] = useRecoilState(selectedUser);
@@ -32,7 +31,7 @@ const ChattingRoomPage = () => {
               <PartImage src={`/images/${index}.jpg`} />
               <div className="text">
                 <PartName>{user.userName}</PartName>
-                <LastChat getLastMessage={getLastMessage(user.userId)} />
+                <LastInfo getLastInfo={getLastInfo(user.userId)} />
               </div>
             </User>
           )}

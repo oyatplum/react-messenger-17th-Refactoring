@@ -26,5 +26,5 @@ export interface Chat {
 }
 
 export interface Last {
-  getLastMessage: string;
+  getLastInfo: string[];
 }
