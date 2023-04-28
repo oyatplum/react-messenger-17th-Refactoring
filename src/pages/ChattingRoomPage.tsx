@@ -62,11 +62,6 @@ const User = styled.div`
     height: 3rem;
   }
 `;
-const Message = styled.div`
-  font-size: 0.75rem;
-  padding: 0.2rem 0 0 0.1rem;
-  color: #4d4d4d;
-`;
 const PartImage = styled.img`
   margin: 0.5rem 0 0.5rem 1rem;
   height: 2.7rem;

@@ -49,7 +49,6 @@ const NotSearch = () => {
               </Line>
             </>
           ) : (
-            // <User onClick={() => navigate('/chatting', { state: user.userId })}>
             <User onClick={() => handleModal(user.userId)}>
               <PartImage src={`/images/${index}.jpg`} />
               <div className="text">

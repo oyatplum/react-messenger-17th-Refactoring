@@ -8,11 +8,6 @@ export const selectedUser = atom<number>({
   default: 0,
 });
 
-export const userNumber = atom<number>({
-  key: 'userNumber',
-  default: 0,
-});
-
 export const chatList = atom<Chat[]>({
   key: 'chatList',
   default: messageInfo,
