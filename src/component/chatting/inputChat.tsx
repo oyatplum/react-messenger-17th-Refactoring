@@ -12,8 +12,8 @@ const InputChat = ({ chattingRoomId }: ChattingRoom) => {
 
   let updateChat;
 
-  const submitText = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const submitText = (e?: React.FormEvent<HTMLFormElement>) => {
+    e?.preventDefault();
     if (text.trim()) {
       let newChat: ChatInfo = {
         userNum: selectedId,
@@ -39,13 +39,19 @@ const InputChat = ({ chattingRoomId }: ChattingRoom) => {
     }
   };
 
+  const handleKeyup = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (!e.shiftKey && e.key === 'Enter') {
+      submitText();
+    }
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setText(e.target.value);
   };
 
   return (
     <InputText onSubmit={submitText}>
-      <textarea onChange={handleChange} value={text} />
+      <textarea onChange={handleChange} onKeyUp={handleKeyup} value={text} />
       <EnterButton>전송</EnterButton>
     </InputText>
   );
@@ -78,6 +84,7 @@ const InputText = styled.form`
     height: 95px;
     font-size: 15px;
     width: 75%;
+    resize: none;
 
     &:focus {
       outline: none;
