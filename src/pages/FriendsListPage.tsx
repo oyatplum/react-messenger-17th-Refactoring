@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import userList from '../json/users.json';
 import { useState } from 'react';
 import NotSearch from '../component/friends/notSearch';
 import Search from '../component/friends/search';

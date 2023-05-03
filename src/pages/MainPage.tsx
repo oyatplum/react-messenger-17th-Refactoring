@@ -18,8 +18,16 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
-  width: 270px;
+  width: 273px;
   height: 500px;
+  opacity: 1;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  :hover {
+    opacity: 0.5;
+    transition-duration: 0.7s;
+    cursor: pointer;
+  }
 `;
 
 const Button = styled.button`
@@ -36,6 +44,10 @@ const Button = styled.button`
   :hover {
     background-color: #b3b3b3;
     color: #333333;
+    transition-duration: 0.7s;
+    transform: scale(1.2);
+    transform-origin: 50% 50%;
+    transition: transform 0.7s;
   }
 `;
 

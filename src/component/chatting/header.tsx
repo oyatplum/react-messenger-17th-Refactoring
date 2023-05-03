@@ -43,6 +43,7 @@ const Button = styled.button`
   :hover {
     color: rgb(69 68 68);
     font-size: 1rem;
+    cursor: pointer;
   }
 `;
 

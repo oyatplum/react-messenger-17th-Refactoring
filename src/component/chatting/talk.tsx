@@ -94,6 +94,7 @@ const Heart = styled.img`
   border-radius: 0.3rem;
   :hover {
     filter: opacity(50%);
+    cursor: pointer;
   }
 `;
 const Button = styled.button`
@@ -110,6 +111,7 @@ const Button = styled.button`
     margin: 0 0 0.3rem 0.25rem;
     :hover {
       filter: opacity(25%);
+      cursor: pointer;
     }
   }
 `;

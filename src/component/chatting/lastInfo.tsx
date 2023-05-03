@@ -5,7 +5,6 @@ const LastInfo = ({ getLastInfo }: Last) => {
   const lastMessage = getLastInfo[0];
   const lastDate = getLastInfo[1];
 
-  const time = lastDate.substring(16, 21);
   const hour = Number(lastDate.substring(16, 18));
   const hourSetting = hour < 12 ? `오전 ${hour}` : `오후 ${hour - 12}`;
   const minute = Number(lastDate.substring(19, 21));

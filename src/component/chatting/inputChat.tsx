@@ -64,6 +64,7 @@ const EnterButton = styled.button`
   }
   :hover {
     background-color: rgb(255 231 68);
+    cursor: pointer;
   }
 `;
 const InputText = styled.form`
