@@ -7,7 +7,6 @@ import ChattingPage from './pages/ChattingPage';
 import SettingPage from './pages/SettingPage';
 import Navigator from './component/navigator/navigator';
 import styled from 'styled-components';
-import { RecoilRoot } from 'recoil';
 
 const Layout = () => {
   return (
@@ -20,7 +19,7 @@ const Layout = () => {
 
 const App = () => {
   return (
-    <RecoilRoot>
+    <>
       <GlobalStyle />
       <Container>
         <BrowserRouter>
@@ -35,7 +34,7 @@ const App = () => {
           </Routes>
         </BrowserRouter>
       </Container>
-    </RecoilRoot>
+    </>
   );
 };
 const Container = styled.div`

@@ -1,17 +1,12 @@
 export interface UserInfo {
-  userId: number;
-  userName: string;
+  readonly userId: number;
+  readonly userName: string;
   userMessage: string;
-}
-
-export interface MessageInfo {
-  addText: string;
-  messageId: number;
 }
 
 export interface ChatInfo {
   addText: string;
-  userNum: number;
+  readonly userNum: number;
   date: string;
 }
 
@@ -21,7 +16,7 @@ export interface ChattingRoom {
 }
 
 export interface Chat {
-  chattingRoomId: number;
+  readonly chattingRoomId: number;
   message: ChatInfo[];
 }
 
