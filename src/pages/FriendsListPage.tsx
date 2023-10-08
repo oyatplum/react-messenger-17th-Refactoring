@@ -4,6 +4,7 @@ import NotSearch from '../component/friends/notSearch';
 import Search from '../component/friends/search';
 
 const FriendsListPage = () => {
+  console.log('FriendsListPage');
   const [isSearch, setSearch] = useState(false);
 
   return (

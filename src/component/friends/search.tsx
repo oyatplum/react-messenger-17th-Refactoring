@@ -4,6 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { searchedUserList } from '../../atom/atom';
 
 const Search = () => {
+  console.log('search');
   const [text, setText] = useState<string>('');
   const searchList = useRecoilValue(searchedUserList);
 

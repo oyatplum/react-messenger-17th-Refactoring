@@ -9,6 +9,7 @@ import Navigator from './component/navigator/navigator';
 import styled from 'styled-components';
 
 const Layout = () => {
+  console.log('Layout');
   return (
     <Display>
       <Navigator />
@@ -18,6 +19,7 @@ const Layout = () => {
 };
 
 const App = () => {
+  console.log('App');
   return (
     <>
       <GlobalStyle />

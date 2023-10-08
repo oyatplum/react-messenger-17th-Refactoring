@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
+  console.log('MainPage');
   const navigate = useNavigate();
 
   return (

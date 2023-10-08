@@ -5,8 +5,10 @@ import { selectedUser } from '../atom/atom';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { chatList } from './../atom/atom';
 import LastInfo from '../component/chatting/lastInfo';
+import { useEffect } from 'react';
 
 const ChattingRoomPage = () => {
+  console.log('ChattingRoomPage');
   const navigate = useNavigate();
   const chattingList = useRecoilValue(chatList);
 
@@ -17,13 +19,15 @@ const ChattingRoomPage = () => {
   };
 
   const [selected, setSelected] = useRecoilState(selectedUser);
-  setSelected(0);
+  useEffect(() => {
+    setSelected(0);
+  }, [selected]);
 
   return (
     <Container>
       <Chatting>채팅</Chatting>
       {userList.map((user, index) => (
-        <>
+        <List key={user.userId}>
           {index == 0 ? (
             <></>
           ) : (
@@ -35,11 +39,13 @@ const ChattingRoomPage = () => {
               </div>
             </User>
           )}
-        </>
+        </List>
       ))}
     </Container>
   );
 };
+
+const List = styled.div``;
 
 const Container = styled.div`
   width: 270px;

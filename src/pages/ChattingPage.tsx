@@ -4,6 +4,7 @@ import InputChat from '../component/chatting/inputChat';
 import { useLocation } from 'react-router-dom';
 
 const ChattingPage = () => {
+  console.log('ChattingPage');
   const { state } = useLocation();
 
   return (

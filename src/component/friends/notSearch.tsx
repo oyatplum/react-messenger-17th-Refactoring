@@ -3,6 +3,7 @@ import userList from '../../json/users.json';
 import { useState } from 'react';
 
 const NotSearch = () => {
+  console.log('notSearch');
   const [isModal, setIsModal] = useState(false);
   const [modalId, setModalId] = useState(0);
 
@@ -14,7 +15,7 @@ const NotSearch = () => {
   return (
     <Container>
       {isModal ? (
-        <Modal modalId={modalId}>
+        <Modal>
           <div
             className="modal-user"
             style={{
@@ -34,7 +35,7 @@ const NotSearch = () => {
         <></>
       )}
       {userList.map((user, index) => (
-        <>
+        <List key={user.userId}>
           {index == 0 ? (
             <>
               <User onClick={() => handleModal(user.userId)}>
@@ -57,12 +58,14 @@ const NotSearch = () => {
               </div>
             </User>
           )}
-        </>
+        </List>
       ))}
     </Container>
   );
 };
-const Modal = styled.div<{ modalId: number }>`
+
+const List = styled.div``;
+const Modal = styled.div`
   background: rgba(0, 0, 0, 0.3);
   z-index: 9999;
   width: 100%;

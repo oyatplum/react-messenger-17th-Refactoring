@@ -2,6 +2,7 @@ import { Last } from '../../interface/interface';
 import styled from 'styled-components';
 
 const LastInfo = ({ getLastInfo }: Last) => {
+  console.log('LastInfo');
   const lastMessage = getLastInfo[0];
   const lastDate = getLastInfo[1];
 
