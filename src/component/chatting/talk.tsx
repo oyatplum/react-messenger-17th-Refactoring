@@ -4,8 +4,10 @@ import { ChattingRoom } from '../../interface/interface';
 import { selectedUser, chatList } from '../../atom/atom';
 import userList from '../../json/users.json';
 import { useState } from 'react';
+import React from 'react';
 
-const Talk = ({ chattingRoomId, messageId }: ChattingRoom) => {
+const Talk = ({ chattingRoomId }: ChattingRoom) => {
+  console.log('Talk');
   const selected = useRecoilValue(selectedUser);
   const chattingList = useRecoilValue(chatList);
 
@@ -26,66 +28,50 @@ const Talk = ({ chattingRoomId, messageId }: ChattingRoom) => {
 
   return (
     <>
-      {selected === chattingList[chattingRoomId].message[messageId].userNum ? (
-        <Chat>
-          {
-            <Time>
-              {chatTime(chattingList[chattingRoomId].message[messageId].date)}
-            </Time>
-          }
-          <NowUser>
-            {chattingList[chattingRoomId].message[messageId].addText}{' '}
-          </NowUser>
-        </Chat>
-      ) : (
-        <Chat>
-          <PartnerImage
-            src={`/images/${chattingList[chattingRoomId].message[messageId].userNum}.jpg`}
-          />
-          <Contents
-            onMouseEnter={() => {
-              setShowBtn(true);
-            }}
-            onMouseLeave={() => {
-              setShowBtn(false);
-            }}
-          >
-            <PartnerName>
-              {
-                userList[
-                  chattingList[chattingRoomId].message[messageId].userNum
-                ].userName
-              }
-            </PartnerName>
-            <Content>
-              <CounterPart>
-                {chattingList[chattingRoomId].message[messageId].addText}
-              </CounterPart>
-              {
-                <Time>
-                  {chatTime(
-                    chattingList[chattingRoomId].message[messageId].date
-                  )}
-                </Time>
-              }
-              <div className={`list ${showBtn ? 'show' : 'hide'}`}>
-                <Button onClick={() => setSympathy(true)}>
-                  <div className="heart">{'♥'}</div>
-                </Button>
-              </div>
-            </Content>
-            <div className={`heart ${sympathy ? 'show' : 'hide'}`}>
-              <Heart
-                src={`/images/sympathy.png`}
-                onClick={() => setSympathy(false)}
-              ></Heart>
-            </div>
-          </Contents>
-        </Chat>
-      )}
+      {chattingList[chattingRoomId].message.map((chat, index) => (
+        <ChatList key={index}>
+          {selected === chat.userNum ? (
+            <Chat>
+              {<Time>{chatTime(chat.date)}</Time>}
+              <NowUser>{chat.addText} </NowUser>
+            </Chat>
+          ) : (
+            <Chat>
+              <PartnerImage src={`/images/${chat.userNum}.jpg`} />
+              <Contents
+                onMouseEnter={() => {
+                  setShowBtn(true);
+                }}
+                onMouseLeave={() => {
+                  setShowBtn(false);
+                }}
+              >
+                <PartnerName>{userList[chat.userNum].userName}</PartnerName>
+                <Content>
+                  <CounterPart>{chat.addText}</CounterPart>
+                  {<Time>{chatTime(chat.date)}</Time>}
+                  <div className={`list ${showBtn ? 'show' : 'hide'}`}>
+                    <Button onClick={() => setSympathy(true)}>
+                      <div className="heart">{'♥'}</div>
+                    </Button>
+                  </div>
+                </Content>
+                <div className={`heart ${sympathy ? 'show' : 'hide'}`}>
+                  <Heart
+                    src={`/images/sympathy.png`}
+                    onClick={() => setSympathy(false)}
+                  ></Heart>
+                </div>
+              </Contents>
+            </Chat>
+          )}
+        </ChatList>
+      ))}
     </>
   );
 };
+
+const ChatList = styled.div``;
 const Heart = styled.img`
   height: 0.8rem;
   background-color: white;

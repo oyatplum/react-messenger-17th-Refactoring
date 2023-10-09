@@ -9,9 +9,9 @@ const ChattingPage = () => {
 
   return (
     <>
-      <Header chattingRoomId={state} messageId={state} />
-      <ChattingContent chattingRoomId={state} messageId={state} />
-      <InputChat chattingRoomId={state} messageId={state} />
+      <Header chattingRoomId={state} />
+      <ChattingContent chattingRoomId={state} />
+      <InputChat chattingRoomId={state} />
     </>
   );
 };

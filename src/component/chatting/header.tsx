@@ -5,6 +5,7 @@ import { ChattingRoom } from './../../interface/interface';
 import { useNavigate } from 'react-router-dom';
 
 const Header = ({ chattingRoomId }: ChattingRoom) => {
+  console.log('header');
   const navigate = useNavigate();
 
   return (

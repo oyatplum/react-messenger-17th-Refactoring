@@ -6,6 +6,7 @@ import { chatList } from './../../atom/atom';
 import { useRef, useEffect } from 'react';
 
 const ChattingContent = ({ chattingRoomId }: ChattingRoom) => {
+  console.log('ChattingContent');
   const chattingList = useRecoilValue(chatList);
 
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -22,9 +23,7 @@ const ChattingContent = ({ chattingRoomId }: ChattingRoom) => {
 
   return (
     <Chatting ref={scrollRef}>
-      {chattingList[chattingRoomId].message.map((chat, index) => (
-        <Talk key={index} messageId={index} chattingRoomId={chattingRoomId} />
-      ))}
+      <Talk chattingRoomId={chattingRoomId} />
     </Chatting>
   );
 };

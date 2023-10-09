@@ -12,7 +12,6 @@ export interface ChatInfo {
 
 export interface ChattingRoom {
   chattingRoomId: number;
-  messageId: number;
 }
 
 export interface Chat {
