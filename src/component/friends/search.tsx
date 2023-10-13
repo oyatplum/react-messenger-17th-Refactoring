@@ -21,7 +21,7 @@ const Search = () => {
       />
 
       {searchList.map((user, index) => (
-        <>
+        <List key={user.userId}>
           {index != 0 && user.userName.includes(text) ? (
             <>
               <User>
@@ -35,12 +35,13 @@ const Search = () => {
           ) : (
             <></>
           )}
-        </>
+        </List>
       ))}
     </>
   );
 };
 
+const List = styled.div``;
 const SearchBox = styled.input`
   width: 13.5rem;
   height: 2rem;

@@ -4,6 +4,7 @@ import { UserInfo } from '../../interface/interface';
 import { selectedUser } from '../../atom/atom';
 
 const ToggleUser = ({ userId, userName }: UserInfo) => {
+  console.log('toggleUser');
   const [selectedId, setSelectedId] = useRecoilState(selectedUser);
 
   return (

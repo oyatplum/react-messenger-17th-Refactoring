@@ -5,6 +5,7 @@ import { chatList, selectedUser } from '../../atom/atom';
 import { ChatInfo, ChattingRoom } from '../../interface/interface';
 
 const InputChat = ({ chattingRoomId }: ChattingRoom) => {
+  console.log('InputChat');
   const [text, setText] = useState<string>('');
   const [newChatList, setNewChatList] = useRecoilState(chatList);
   const [realChat, setRealChat] = useState(newChatList[chattingRoomId].message);
@@ -12,8 +13,7 @@ const InputChat = ({ chattingRoomId }: ChattingRoom) => {
 
   let updateChat;
 
-  const submitText = (e?: React.FormEvent<HTMLFormElement>) => {
-    e?.preventDefault();
+  const submitText = () => {
     if (text.trim()) {
       let newChat: ChatInfo = {
         userNum: selectedId,
@@ -34,13 +34,15 @@ const InputChat = ({ chattingRoomId }: ChattingRoom) => {
         finalChatList,
         ...newChatList.slice(chattingRoomId + 1),
       ]);
-
       setText('');
     }
   };
 
-  const handleKeyup = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (!e.shiftKey && e.key === 'Enter') {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.nativeEvent.isComposing) {
+      return;
+    } else if (!e.shiftKey && e.key === 'Enter') {
+      e?.preventDefault();
       submitText();
     }
   };
@@ -51,7 +53,11 @@ const InputChat = ({ chattingRoomId }: ChattingRoom) => {
 
   return (
     <InputText onSubmit={submitText}>
-      <textarea onChange={handleChange} onKeyUp={handleKeyup} value={text} />
+      <textarea
+        onChange={handleChange}
+        onKeyDown={handleKeyDown}
+        value={text}
+      />
       <EnterButton>전송</EnterButton>
     </InputText>
   );

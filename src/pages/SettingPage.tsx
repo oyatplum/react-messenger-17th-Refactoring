@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 
 const SettingPage = () => {
+  console.log('SettingPage');
   const navigate = useNavigate();
   return (
     <Container>

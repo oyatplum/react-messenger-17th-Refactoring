@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Navigator = () => {
+  console.log('Navigator');
   const navigate = useNavigate();
 
   return (
