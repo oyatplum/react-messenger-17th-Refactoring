@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { chatList, selectedUser } from '../../atom/atom';
-import { ChatInfo, ChattingRoom } from '../../interface/interface';
+import { chatList, selectedUser } from '../../assets/atom/atom';
+import { ChatInfo, ChattingRoom } from '../../assets/interface/interface';
 
 const InputChat = ({ chattingRoomId }: ChattingRoom) => {
   console.log('InputChat');

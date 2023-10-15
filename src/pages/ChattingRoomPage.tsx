@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import userList from '../json/users.json';
+import userList from './../assets/json/users.json';
 import { useNavigate } from 'react-router-dom';
-import { selectedUser } from '../atom/atom';
+import { selectedUser } from '../assets/atom/atom';
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { chatList } from './../atom/atom';
+import { chatList } from '../assets/atom/atom';
 import LastInfo from '../component/chatting/lastInfo';
 import { useEffect } from 'react';
 

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import { searchedUserList } from '../../atom/atom';
+import { searchedUserList } from '../../assets/atom/atom';
 
 const Search = () => {
   console.log('search');

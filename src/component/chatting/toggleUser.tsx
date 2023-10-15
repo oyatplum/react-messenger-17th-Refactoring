@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { useRecoilState } from 'recoil';
-import { UserInfo } from '../../interface/interface';
-import { selectedUser } from '../../atom/atom';
+import { UserInfo } from '../../assets/interface/interface';
+import { selectedUser } from '../../assets/atom/atom';
 
 const ToggleUser = ({ userId, userName }: UserInfo) => {
   console.log('toggleUser');

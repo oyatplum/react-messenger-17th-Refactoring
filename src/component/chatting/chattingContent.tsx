@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import Talk from './talk';
-import { ChattingRoom } from './../../interface/interface';
+import { ChattingRoom } from '../../assets/interface/interface';
 import { useRecoilValue } from 'recoil';
-import { chatList } from './../../atom/atom';
+import { chatList } from '../../assets/atom/atom';
 import { useRef, useEffect } from 'react';
 
 const ChattingContent = ({ chattingRoomId }: ChattingRoom) => {

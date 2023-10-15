@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import ToggleUser from './toggleUser';
-import userList from './../../json/users.json';
-import { ChattingRoom } from './../../interface/interface';
+import userList from './../../assets/json/users.json';
+import { ChattingRoom } from '../../assets/interface/interface';
 import { useNavigate } from 'react-router-dom';
 
 const Header = ({ chattingRoomId }: ChattingRoom) => {

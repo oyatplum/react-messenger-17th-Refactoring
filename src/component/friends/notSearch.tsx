@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import userList from '../../json/users.json';
+import userList from './../../assets/json/users.json';
 import { useState } from 'react';
 
 const NotSearch = () => {

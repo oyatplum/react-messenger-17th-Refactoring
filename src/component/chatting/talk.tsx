@@ -1,8 +1,8 @@
 import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
-import { ChattingRoom } from '../../interface/interface';
-import { selectedUser, chatList } from '../../atom/atom';
-import userList from '../../json/users.json';
+import { ChattingRoom } from '../../assets/interface/interface';
+import { selectedUser, chatList } from '../../assets/atom/atom';
+import userList from './../../assets/json/users.json';
 import { useState } from 'react';
 import React from 'react';
 

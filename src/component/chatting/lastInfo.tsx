@@ -1,4 +1,4 @@
-import { Last } from '../../interface/interface';
+import { Last } from '../../assets/interface/interface';
 import styled from 'styled-components';
 
 const LastInfo = ({ getLastInfo }: Last) => {
